@@ -1,6 +1,11 @@
 // QueueView.js - Defines a backbone view class for the music queue.
 var QueueView = Backbone.View.extend({
 
+  initialize: function(){
+    this.typeof = 'QueueView';
+    console.log(this.typeof, 'initialize()');
+  },
+
   tagName: "table",
 
   initialize: function() {
