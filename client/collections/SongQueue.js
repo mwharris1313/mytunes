@@ -22,6 +22,11 @@ var SongQueue = Songs.extend({
       }
     }, this);
 
+    this.on('dequeue', function(song){
+      console.log('songQueue dequeue event');
+      this.remove(this.at(0));
+    }, this);
+
 
   },
 
