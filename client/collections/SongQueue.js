@@ -8,14 +8,15 @@ var SongQueue = Songs.extend({
 
     this.on('add', function(song){
       console.log('songQueue add event');
-      console.log('songqueue', this);
       if (this.length === 1) { // first song in the queue
         console.log('***********************************************************');
-      //this.set('currentSong', song);
         this.playFirst();
-
       }
-      //this.get('songQueue').add(song);
+    }, this);
+
+    this.on('ended', function(song){
+      console.log('songQueue ended event');
+      this.remove(this.at(0));
     }, this);
 
 
