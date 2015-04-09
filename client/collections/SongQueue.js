@@ -6,10 +6,4 @@ var SongQueue = Songs.extend({
     console.log(this.typeof, 'initialize()');
   },
 
-  // enqueue: function(song){
-  //   //this.add(song);
-  //   console.log('SongQueue.js enqueue',this);
-  //   console.log('Firing SongQueue Enqueue');
-  // }
-
 });

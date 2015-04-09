@@ -6,6 +6,7 @@ var Songs = Backbone.Collection.extend({
   initialize: function(){
     this.typeof = 'Songs';
     console.log(this.typeof, 'initialize()');
-  }
+  },
+
 
 });

@@ -9,14 +9,28 @@ var SongModel = Backbone.Model.extend({
   play: function(){
     // Triggering an event here will also trigger the event on the collection
     console.log('SongModel play()');
+    //console.log('this:', this);
     this.trigger('play', this);
+    this.trigger('enqueue', this);
   },
 
-  // enqueue: function(){
-  //   // should bubble up to the SongQueue
-  //   console.log('SongModel.js enqueue');
-  //   this.trigger('enqueue', this);
-  // }
+  enqueue: function(){
+    // Triggering an event here will also trigger the event on the collection
+    console.log(this.typeof, 'play()');
+    this.trigger('enqueue', this);
+  },
+
+  dequeue: function(){
+    // Triggering an event here will also trigger the event on the collection
+    console.log(this.typeof, 'dequeue()');
+    this.trigger('dequeue', this);
+  },
+
+  ended: function(){
+    // Triggering an event here will also trigger the event on the collection
+    console.log(this.typeof, 'ended()');
+    this.trigger('ended', this);
+  },
 
 
 

@@ -16,11 +16,16 @@ var AppModel = Backbone.Model.extend({
     getting called from the window (unless we override it, as we do here). */
 
 
-    params.library.on('queue', function(song){
-      console.log('AppModel.js queue event');
+    params.library.on('enqueue', function(song){
+      console.log('library.on() enqueue');
+
+      // console.log('this.get("songQueue")', this.get('songQueue'));
+      //this.get('library').enqueue(song);
+      this.get('songQueue').add(song);
     }, this);
 
     params.library.on('play', function(song){
+      console.log('library.on() play');
       this.set('currentSong', song);
     }, this);
   }
